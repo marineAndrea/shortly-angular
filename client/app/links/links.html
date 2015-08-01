@@ -1,7 +1,14 @@
-<div id='container' ng-controller="LinksController">
+<div id='container'>
   <!-- Your html here -->
-  <ul>
-    <li ng-repeat="link in links" ng-click="" >{{ link }}</li>
+  <div class="link" ng-repeat="link in data.links">
+    <img src="../../assets/redirect_icon.png" />
+    {{ link.title }}
+    <br />
+    {{ link.url }}
+    {{ link.code }}
+  </div>
+  <!-- <ul>
+    <li ng-repeat="link in data.links" ng-click="" >{{ link }}</li>
   </ul>
-
+ -->
 </div>
