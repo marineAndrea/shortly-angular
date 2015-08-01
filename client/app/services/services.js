@@ -9,12 +9,13 @@ angular.module('shortly.services', [])
     });
     return (request.then(next))
   }
-  
+
   var addLink = function(link){
+    console.log('link ', link);
     var request = $http({
       method: 'post',
       url:'/api/links',
-      data: JSON.stringify(link)
+      data: {'url' : link}
     });
     return request;
   }
