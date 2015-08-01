@@ -9,8 +9,19 @@ angular.module('shortly.services', [])
     });
     return (request.then(next))
   }
+  
+  var addLink = function(link){
+    var request = $http({
+      method: 'post',
+      url:'/api/links',
+      data: JSON.stringify(link)
+    });
+    return request;
+  }
+
   return ({
-    getLinks: getLinks
+    getLinks: getLinks,
+    addLink: addLink
   });
 })
 .factory('Auth', function ($http, $location, $window) {
