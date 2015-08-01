@@ -1,27 +1,25 @@
 <div id='container'>
   <!-- Your html here -->
-  <div class="link" ng-repeat="link in data.links">
-    <div class="visits">
-      <span class='count'>
-        {{ link.visits }}
-      </span>
-      <span>Visits</span>
-    </div>
-    <div class="img">
-      <img src="../../assets/redirect_icon.png" />
-    </div>
-    <div class="title">
-      {{ link.title }}
-    </div>
-    <div class='original'>
-      {{ link.url }}
-    </div>
-    <div class="info">
-      {{ link.base_url +'/'+ link.code }}
-    </div>
+  <div class="link" ng-repeat="link in data.links" ng-click='goToLink(link.url)'>
+    <a href="{{ link.url }}">
+      <div class="visits">
+        <span class='count'>
+          {{ link.visits }}
+        </span>
+        <span>Visits</span>
+      </div>
+      <div class="img">
+        <img src="../../assets/redirect_icon.png" />
+      </div>
+      <div class="title">
+        {{ link.title }}
+      </div>
+      <div class='original'>
+        {{ link.url }}
+      </div>
+      <div class="info">
+        {{ link.base_url +'/'+ link.code }}
+      </div>
+    </a>
   </div>
-  <!-- <ul>
-    <li ng-repeat="link in data.links" ng-click="" >{{ link }}</li>
-  </ul>
- -->
 </div>

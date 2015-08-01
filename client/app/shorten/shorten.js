@@ -5,17 +5,15 @@ angular.module('shortly.shorten', [])
   
 
   $scope.addLink = function(link){
-    console.log('adding link');
-    if(!Auth.isAuth()){
-      console.log('user not authentified');
-      console.log($location);
-      $location.$$url = '/signin';
-      console.log('new loc', $location);
-    }
     Links.linkRequest(link);
     $scope.newUrl = '';
   };
 
+  $scope.checkAuth = function(){
+    if(!Auth.isAuth()){
+      $location.path('/signin');
+    }
+  }
 
-
+  $scope.checkAuth();
 });
