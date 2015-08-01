@@ -1,9 +1,10 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Auth, Links) {
   $scope.data = {
     links: []
   };
+
 
   $scope.getLinks = function(){
     Links.getLinks(function(data){

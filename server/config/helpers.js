@@ -17,7 +17,7 @@ module.exports = {
   decode: function (req, res, next) {
     var token = req.headers['x-access-token'];
     var user;
-
+    // console.log('decoded');
     if (!token) {
       return res.status(403); // send forbidden if a token is not provided
     }

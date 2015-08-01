@@ -10,8 +10,7 @@ angular.module('shortly.services', [])
     return (request.then(next))
   }
 
-  var addLink = function(link){
-    console.log('link ', link);
+  var linkRequest = function(link){
     var request = $http({
       method: 'post',
       url:'/api/links',
@@ -22,9 +21,10 @@ angular.module('shortly.services', [])
 
   return ({
     getLinks: getLinks,
-    addLink: addLink
+    linkRequest: linkRequest
   });
 })
+
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user

@@ -67,6 +67,7 @@ module.exports = {
     // grab the token in the header is any
     // then decode the token, which we end up being the user object
     // check to see if that user exists in the database
+    console.log('checking auth')
     var token = req.headers['x-access-token'];
     if (!token) {
       next(new Error('No token'));
