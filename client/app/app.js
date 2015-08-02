@@ -27,7 +27,6 @@ angular.module('shortly', [
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
-    // Your code here
 
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls

@@ -5,8 +5,7 @@ angular.module('shortly.links', [])
     links: []
   };
 
-
-  $scope.linksDisplay = function(){
+  $scope.getLinks = function(){
     if(!Auth.isAuth()){
       $location.path('/signin');
     }
@@ -15,6 +14,5 @@ angular.module('shortly.links', [])
     });
   };
 
-  // $scope.data.links = $scope.data.links.sort();
-  $scope.linksDisplay();
+  $scope.getLinks();
 });

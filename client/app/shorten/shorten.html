@@ -1,9 +1,18 @@
-<div id='container'>
-<!-- Your code here -->
-  <input type='url' ng-model="newUrl" />
-  <button ng-click='addLink(newUrl)'>Add</button>
-  <br />
-  <!-- <span>{{ link.validation }}</span> -->
+<div id='container' class='creator'>
+
+  <form name="urlForm" ng-submit='addLink()' novalidate>
+    <input type='url' ng-model="link.url" required name='link'
+      ng-class='{"error": urlForm.$invalid && urlForm.$dirty}'/>
+    <button type='submit' ng-disabled='urlForm.$invalid' value='shorten'>Add</button>
+  </form>
+
+  <div ng-if="urlForm.link.$error.required && urlForm.$dirty" class='message'>
+    <h2>Url Required</h2>
+  </div>
+
+  <div ng-show="urlForm.link.$error.url && urlForm.$dirty" class='message'>
+    <h2>Not valid Url</h2> 
+  </div>
 </div>
 
 

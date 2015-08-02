@@ -1,7 +1,8 @@
+<input type='text' ng-model='search' />
 <div id='container'>
   <!-- Your html here -->
-  <div class="link" ng-repeat="link in data.links" ng-click='goToLink(link.url)'>
-    <a href="{{ link.url }}">
+  <div class="link" ng-repeat="link in data.links | filter:search | orderBy:'link.visits'">
+    <a href="http://localhost:3000/api/links/{{ link.code }}">
       <div class="visits">
         <span class='count'>
           {{ link.visits }}
