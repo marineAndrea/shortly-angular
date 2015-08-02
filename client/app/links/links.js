@@ -15,5 +15,6 @@ angular.module('shortly.links', [])
     });
   };
 
+  // $scope.data.links = $scope.data.links.sort();
   $scope.linksDisplay();
 });
